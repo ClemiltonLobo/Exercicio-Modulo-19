@@ -4,12 +4,11 @@ using UnityEngine;
 using DG.Tweening;
 
 public class Player : MonoBehaviour
-{
+{    
     public Rigidbody2D MyRigidbody2D;
     public HealthBase healthBase;
     public Transform playerTransform;
-    public static Player currentPlayerinstance;
-   
+    public static Player currentPlayerinstance;   
 
     [Header("Setup")]
     public SOPlayerSetup soPlayerSetup;
@@ -70,10 +69,10 @@ public class Player : MonoBehaviour
             _currentSpeed = soPlayerSetup.speedRun;
             _currentPlayer.speed = 1;
         }
-
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            MyRigidbody2D.velocity = new Vector2(-_currentSpeed, MyRigidbody2D.velocity.y);
+            
+            MyRigidbody2D.velocity = new Vector2(-_currentSpeed, MyRigidbody2D.velocity.y);            
             if (MyRigidbody2D.transform.localScale.x != -1)
             {
                 MyRigidbody2D.transform.DOScaleX(-1, soPlayerSetup.playerSwipeDuration);
@@ -82,7 +81,7 @@ public class Player : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            MyRigidbody2D.velocity = new Vector2(_currentSpeed, MyRigidbody2D.velocity.y);
+            MyRigidbody2D.velocity = new Vector2(_currentSpeed, MyRigidbody2D.velocity.y);                        
             if (MyRigidbody2D.transform.localScale.x != 1)
             {
                 MyRigidbody2D.transform.DOScaleX(1, soPlayerSetup.playerSwipeDuration);
@@ -94,15 +93,14 @@ public class Player : MonoBehaviour
             _currentPlayer.SetBool(soPlayerSetup.boolRun, false);
         }
 
-
         if (MyRigidbody2D.velocity.x > 0)
-        {
-            MyRigidbody2D.velocity += soPlayerSetup.friction;
-        }
+            {
+                MyRigidbody2D.velocity += soPlayerSetup.friction;
+            }
         else if (MyRigidbody2D.velocity.x < 0)
-        {
-            MyRigidbody2D.velocity -= soPlayerSetup.friction;
-        }
+            {
+                MyRigidbody2D.velocity -= soPlayerSetup.friction;
+            }        
     }
 
     private void HandleJump()
