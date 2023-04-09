@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
     public Rigidbody2D MyRigidbody2D;
     public HealthBase healthBase;
     public Transform playerTransform;
-    public static Player currentPlayerinstance;   
+    public static Player currentPlayerinstance;
+    
 
     [Header("Setup")]
     public SOPlayerSetup soPlayerSetup;
@@ -24,6 +25,11 @@ public class Player : MonoBehaviour
     public float spaceToGround = .1f;
     public ParticleSystem jumpVFX;
 
+    //private int _jumpForce = 2;
+    //private bool _canJump = true;
+    private int _jumpCount = 0;
+    //[SerializeField] private int _maxJumps = 2;
+
     private void Awake()
     {        
         if (healthBase != null)
@@ -35,6 +41,7 @@ public class Player : MonoBehaviour
         {
             distToGround = collider2D.bounds.extents.y;
         }
+        //_jumpCount = 2; // define o número inicial de saltos como 2
     }
 
     private bool isGrounded()
@@ -105,16 +112,30 @@ public class Player : MonoBehaviour
 
     private void HandleJump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded())
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            MyRigidbody2D.velocity = Vector2.up * soPlayerSetup.forceJump;
-            MyRigidbody2D.transform.localScale = Vector2.one;
+            if (isGrounded())
+            {
+                _jumpCount = 2;
+            }
 
-            DOTween.Kill(MyRigidbody2D.transform);
-
-            HandleScaleJump();
-            HandleScaleSquat();
-            PlayJumpVFX();
+            if (_jumpCount > 0)
+            {
+                MyRigidbody2D.velocity = Vector2.up * soPlayerSetup.forceJump;
+                MyRigidbody2D.transform.localScale = Vector2.one;
+                DOTween.Kill(MyRigidbody2D.transform);
+                HandleScaleJump();
+                HandleScaleSquat();
+                PlayJumpVFX();
+                _jumpCount--;
+            }
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            _jumpCount = 0;
         }
     }
 
