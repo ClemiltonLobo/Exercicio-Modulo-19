@@ -5,7 +5,7 @@ using UnityEngine;
 public class ItemCollactableBase : MonoBehaviour
 {
     public string compareTag = "Player";
-    public new ParticleSystem particleSystem;
+    public ParticleSystem particleSystem;
 
     private void Awake()
     {

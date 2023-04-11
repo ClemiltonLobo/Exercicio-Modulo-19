@@ -8,6 +8,7 @@ using Ebac.Core.Singleton;
 public class ItemCollactableRecoverLife :ItemCollactableBase
 {
     public SOFloat recoverAmount;
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {
