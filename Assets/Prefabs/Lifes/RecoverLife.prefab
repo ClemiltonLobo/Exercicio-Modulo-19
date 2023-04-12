@@ -127,19 +127,63 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3078023946132900395, guid: d5d78340d87cbb04c9561f2f6757c558, type: 3}
       propertyPath: looping
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3078023946132900395, guid: d5d78340d87cbb04c9561f2f6757c558, type: 3}
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3078023946132900395, guid: d5d78340d87cbb04c9561f2f6757c558, type: 3}
+      propertyPath: simulationSpeed
+      value: 0.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 3078023946132900395, guid: d5d78340d87cbb04c9561f2f6757c558, type: 3}
+      propertyPath: ShapeModule.angle
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 3078023946132900395, guid: d5d78340d87cbb04c9561f2f6757c558, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3078023946132900395, guid: d5d78340d87cbb04c9561f2f6757c558, type: 3}
+      propertyPath: ShapeModule.m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 02800fb9cff14da47a04572790384d8b, type: 3}
+    - target: {fileID: 3078023946132900395, guid: d5d78340d87cbb04c9561f2f6757c558, type: 3}
       propertyPath: EmissionModule.m_BurstCount
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3078023946132900395, guid: d5d78340d87cbb04c9561f2f6757c558, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3078023946132900395, guid: d5d78340d87cbb04c9561f2f6757c558, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3078023946132900395, guid: d5d78340d87cbb04c9561f2f6757c558, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3078023946132900395, guid: d5d78340d87cbb04c9561f2f6757c558, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3078023946132900395, guid: d5d78340d87cbb04c9561f2f6757c558, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3078023946132900395, guid: d5d78340d87cbb04c9561f2f6757c558, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3078023946132900395, guid: d5d78340d87cbb04c9561f2f6757c558, type: 3}
+      propertyPath: LifetimeByEmitterSpeedModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3078023946132900395, guid: d5d78340d87cbb04c9561f2f6757c558, type: 3}
+      propertyPath: LifetimeByEmitterSpeedModule.m_Range.y
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3078023946132900395, guid: d5d78340d87cbb04c9561f2f6757c558, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].cycleCount
@@ -291,6 +335,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3669456256499061886, guid: d5d78340d87cbb04c9561f2f6757c558, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6478349407661953744, guid: d5d78340d87cbb04c9561f2f6757c558, type: 3}
+      propertyPath: m_AllowRoll
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6478349407661953744, guid: d5d78340d87cbb04c9561f2f6757c558, type: 3}
+      propertyPath: m_ApplyActiveColorSpace
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8618306179602622075, guid: d5d78340d87cbb04c9561f2f6757c558, type: 3}
