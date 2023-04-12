@@ -5,7 +5,7 @@ using UnityEngine;
 public class ItemCollactableBase : MonoBehaviour
 {
     public string compareTag = "Player";
-    public ParticleSystem particleSystem;
+    public new ParticleSystem particleSystem;
 
     private void Awake()
     {
@@ -19,15 +19,17 @@ public class ItemCollactableBase : MonoBehaviour
                 Collect();
             }
         }
-
-        protected virtual void Collect()
+    protected virtual void Collect()
         {
             gameObject.SetActive(false);
             OnCollect();
         }
-
-        protected virtual void OnCollect()
+    protected virtual void OnCollect()
         {
         if(particleSystem != null) particleSystem.Play();
         }
+    private void OnDisable()
+    {
+        if (particleSystem != null) particleSystem.Stop();
+    }
 }

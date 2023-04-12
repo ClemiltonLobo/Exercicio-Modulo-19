@@ -8,8 +8,12 @@ using Ebac.Core.Singleton;
 public class ItemCollactableRecoverLife :ItemCollactableBase
 {
     public SOFloat recoverAmount;
-    
 
+    private void Awake()
+    {
+        // Inicie a reprodução do sistema de partículas
+        particleSystem.Play();
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         HealthBase health = other.gameObject.GetComponent<HealthBase>();
@@ -19,6 +23,10 @@ public class ItemCollactableRecoverLife :ItemCollactableBase
             {
                 health.Heal(recoverAmount.value);
                 Debug.Log("Você coletou uma cura");
+
+                
+
+                // Destrua o objeto que contém este componente
                 Destroy(gameObject);
             }
             else if (other.CompareTag("Enemy"))
@@ -26,5 +34,11 @@ public class ItemCollactableRecoverLife :ItemCollactableBase
                 // Não faz nada, já que inimigos não podem coletar cura
             }
         }
+    }
+
+    private void OnDisable()
+    {
+        // Pare a reprodução do sistema de partículas
+        particleSystem.Stop();
     }
 }
