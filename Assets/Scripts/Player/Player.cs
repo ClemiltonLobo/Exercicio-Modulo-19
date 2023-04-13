@@ -12,9 +12,7 @@ public class Player : MonoBehaviour
     
 
     [Header("Setup")]
-    public SOPlayerSetup soPlayerSetup;
-
-    //public Animator animator;
+    public SOPlayerSetup soPlayerSetup;    
 
     private float _currentSpeed;   
     private Animator _currentPlayer;
@@ -24,11 +22,8 @@ public class Player : MonoBehaviour
     public float distToGround;
     public float spaceToGround = .1f;
     public ParticleSystem jumpVFX;
-
-    //private int _jumpForce = 2;
-    //private bool _canJump = true;
-    private int _jumpCount = 0;
-    //[SerializeField] private int _maxJumps = 2;
+   
+    private int _jumpCount = 0;    
 
     private void Awake()
     {        
@@ -40,8 +35,7 @@ public class Player : MonoBehaviour
         if(collider2D != null)
         {
             distToGround = collider2D.bounds.extents.y;
-        }
-        //_jumpCount = 2; // define o número inicial de saltos como 2
+        }        
     }
 
     private bool isGrounded()

@@ -10,8 +10,7 @@ public class ItemCollactableRecoverLife :ItemCollactableBase
     public SOFloat recoverAmount;
 
     private void Awake()
-    {
-        // Inicie a reprodução do sistema de partículas
+    {        
         particleSystem.Play();
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -22,11 +21,7 @@ public class ItemCollactableRecoverLife :ItemCollactableBase
             if (other.CompareTag("Player"))
             {
                 health.Heal(recoverAmount.value);
-                Debug.Log("Você coletou uma cura");
-
-                
-
-                // Destrua o objeto que contém este componente
+                Debug.Log("Você coletou uma cura");                               
                 Destroy(gameObject);
             }
             else if (other.CompareTag("Enemy"))
@@ -37,8 +32,7 @@ public class ItemCollactableRecoverLife :ItemCollactableBase
     }
 
     private void OnDisable()
-    {
-        // Pare a reprodução do sistema de partículas
+    {        
         particleSystem.Stop();
     }
 }

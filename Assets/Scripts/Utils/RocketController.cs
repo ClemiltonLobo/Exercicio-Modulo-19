@@ -29,7 +29,7 @@ public class RocketController : MonoBehaviour
         messageRocketOn.SetActive(false);
         messageVestKey.SetActive(false);
         keyImage.gameObject.SetActive(false);
-        animator = GetComponent<Animator>(); // pega o componente Animator do foguete
+        animator = GetComponent<Animator>(); 
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -57,21 +57,16 @@ public class RocketController : MonoBehaviour
         if (isPlayerNear && Input.GetKeyDown(activationKey))
         {
             if (hasKey)
-            {
-                // Inicia animação do foguete
+            {                
                 messageText.SetActive(false);
-                messageVestKey.SetActive(false);
-                //StartCoroutine(ActivateMessage(messageRocketOn, 2f));
+                messageVestKey.SetActive(false);                
                 keyImage.gameObject.SetActive(false);
-
-                // Ativa imagem da visão de dentro do foguete
+                
                 insideRocketImage.SetActive(true);
-
-                // Desativa jogador da cena
+                
                 playerObject.SetActive(false);
                 CameraPlayer.gameObject.SetActive(false);
-
-                // Chama a animação do foguete
+                
                 animator.SetTrigger("Launch");
             }
             else
@@ -88,10 +83,4 @@ public class RocketController : MonoBehaviour
         Destroy(keyPrefab);
         keyImage.gameObject.SetActive(true);
     }
-    /*IEnumerator ActivateMessage(GameObject messageObject, float duration)
-    {
-        messageObject.SetActive(true);
-        yield return new WaitForSeconds(duration);
-        messageObject.SetActive(false);
-    }*/
 }
