@@ -15520,6 +15520,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8082996659672965696, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
   m_PrefabInstance: {fileID: 8082996658252013714}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &2076050135 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3935235195890390635, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+  m_PrefabInstance: {fileID: 8082996658252013714}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2076801231
 GameObject:
   m_ObjectHideFlags: 0
@@ -16428,6 +16433,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4291651162050039036, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 2076050135}
     - target: {fileID: 4952865110604421676, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
       propertyPath: collisionArea.x
       value: 0.2
@@ -16510,6 +16519,7 @@ PrefabInstance:
       objectReference: {fileID: 1449572936}
     m_RemovedComponents:
     - {fileID: 4952865110604421676, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+    - {fileID: 4291651162050039036, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
 --- !u!1001 &8378632845135751095
 PrefabInstance:

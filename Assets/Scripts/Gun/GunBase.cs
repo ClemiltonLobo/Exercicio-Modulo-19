@@ -8,15 +8,15 @@ public class GunBase : MonoBehaviour
     public Transform positionToShoot;
     public float timeBetweenShoot = .3f;
     public Transform playerSideReference;
+    public AudioSource audioSource;
+    //public Transform soundObject;
 
     private Coroutine _currentCoroutine;
 
     private void Awake()
     {
-        // Busca a referência para o player
-        var player = GameObject.FindGameObjectWithTag("Player");
-
-        // Atribui a referência do transform do player à variável playerSideReference
+        //if (soundObject != null) soundObject.SetParent(null);
+        var player = GameObject.FindGameObjectWithTag("Player");        
         playerSideReference = player.GetComponent<Player>().playerTransform;
     }
 
@@ -24,7 +24,8 @@ public class GunBase : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.S))
         {
-           _currentCoroutine = StartCoroutine(StartShoot());
+            if (audioSource != null) audioSource.Play();
+            _currentCoroutine = StartCoroutine(StartShoot());
         }
         else if (Input.GetKeyUp(KeyCode.S))
         {

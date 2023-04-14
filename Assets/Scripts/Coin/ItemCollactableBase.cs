@@ -18,19 +18,19 @@ public class ItemCollactableBase : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-        {
+    {
             if (collision.transform.CompareTag(compareTag))
             {
                 Collect();
             }
-        }
+    }
     protected virtual void Collect()
-        {
+    {
             gameObject.SetActive(false);
             OnCollect();
-        }
+    }
     protected virtual void OnCollect()
-        {
+    {
         if(particleSystem != null) particleSystem.Play();
         if(audioSource != null) audioSource.Play();
         if (soundObject != null) soundObject.SetParent(null);

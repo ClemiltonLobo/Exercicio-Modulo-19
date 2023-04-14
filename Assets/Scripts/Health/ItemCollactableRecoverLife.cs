@@ -12,6 +12,7 @@ public class ItemCollactableRecoverLife :ItemCollactableBase
     private void Awake()
     {        
         particleSystem.Play();
+        if (soundObject != null) soundObject.SetParent(null);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -20,6 +21,8 @@ public class ItemCollactableRecoverLife :ItemCollactableBase
         {
             if (other.CompareTag("Player"))
             {
+                if (audioSource != null) audioSource.Play();
+                if (soundObject != null) soundObject.SetParent(null);
                 health.Heal(recoverAmount.value);
                 Debug.Log("Você coletou uma cura");                               
                 Destroy(gameObject);
