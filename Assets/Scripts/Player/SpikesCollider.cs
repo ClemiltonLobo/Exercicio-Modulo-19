@@ -12,5 +12,5 @@ public class SpikesCollider : MonoBehaviour
             // Desativa o objeto do jogador
             other.gameObject.SetActive(false);
         }
-    }
+    }    
 }

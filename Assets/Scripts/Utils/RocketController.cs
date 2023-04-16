@@ -16,12 +16,16 @@ public class RocketController : MonoBehaviour
     public GameObject windowObject;
     public GameObject insideRocketImage;
     public CinemachineVirtualCamera CameraPlayer;
+    public ParticleSystem playRocketSmokeVFX;
 
     private bool isPlayerNear = false;
     private bool hasKey = false;
     private Animator animator;
 
     [SerializeField] private Image keyImage;
+    [Header("Sounds")]
+    public AudioSource audioSource;
+    public Transform soundObject;
 
     void Awake()
     {
@@ -29,7 +33,8 @@ public class RocketController : MonoBehaviour
         messageRocketOn.SetActive(false);
         messageVestKey.SetActive(false);
         keyImage.gameObject.SetActive(false);
-        animator = GetComponent<Animator>(); 
+        animator = GetComponent<Animator>();
+        if (soundObject != null) soundObject.SetParent(null);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -67,7 +72,10 @@ public class RocketController : MonoBehaviour
                 playerObject.SetActive(false);
                 CameraPlayer.gameObject.SetActive(false);
                 
-                animator.SetTrigger("Launch");
+                
+                PlayRocketSmokeVFX();
+                if (audioSource != null) audioSource.Play();
+                animator.SetTrigger("Launch");                
             }
             else
             {
@@ -75,6 +83,16 @@ public class RocketController : MonoBehaviour
                 messageVestKey.gameObject.SetActive(true);
             }
         }
+    }
+
+    private void PlayRocketSmokeVFX()
+    {
+        if (playRocketSmokeVFX != null) playRocketSmokeVFX.Play();
+    }
+
+    public void OnAnimationEnd()
+    {
+        if (audioSource != null) audioSource.Stop();
     }
 
     public void OnKeyCollected()
