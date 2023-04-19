@@ -4,17 +4,17 @@ using UnityEngine;
 using DG.Tweening;
 
 public class Player : MonoBehaviour
-{    
+{
     public Rigidbody2D MyRigidbody2D;
     public HealthBase healthBase;
     public Transform playerTransform;
     public static Player currentPlayerinstance;
-    
+
 
     [Header("Setup")]
-    public SOPlayerSetup soPlayerSetup;    
+    public SOPlayerSetup soPlayerSetup;
 
-    private float _currentSpeed;   
+    private float _currentSpeed;
     private Animator _currentPlayer;
 
     [Header("Jump Collision Check")]
@@ -22,8 +22,8 @@ public class Player : MonoBehaviour
     public float distToGround;
     public float spaceToGround = .1f;
     public ParticleSystem jumpVFX;
-   
-    private int _jumpCount = 0;    
+
+    private int _jumpCount = 0;
 
     private void Awake()
     {        
@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
     {
         Debug.DrawRay(transform.position, -Vector2.up,Color.magenta, distToGround + spaceToGround);
         return Physics2D.Raycast(transform.position, -Vector2.up, distToGround + spaceToGround);
+       
     }
 
     private void OnPlayerKill()
