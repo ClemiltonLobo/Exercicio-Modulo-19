@@ -1,16 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class SpikesCollider : MonoBehaviour
+public class ThornsCollider : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D other)
+    public int maxLives = 3;
+    public Transform lastCheckpoint;
+    public TextMeshProUGUI gameOverText;
+    private int currentLives;
+
+    private void Start()
     {
-        // Verifica se o objeto que colidiu é o jogador
+        currentLives = maxLives;
+        gameOverText.gameObject.SetActive(false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {        
         if (other.CompareTag("Player"))
-        {
-            // Desativa o objeto do jogador
-            other.gameObject.SetActive(false);
+        {            
+            if (currentLives > 1)
+            {
+                currentLives--;
+                other.transform.position = lastCheckpoint.position;
+            }
+            else
+            {
+                currentLives = 0;
+                other.gameObject.SetActive(false);
+                gameOverText.gameObject.SetActive(true);
+                // Define o texto do objeto de texto "Game Over" para "Game Over"
+                //gameOverText.text = "Game Over";
+            }
         }
-    }    
+    }
 }

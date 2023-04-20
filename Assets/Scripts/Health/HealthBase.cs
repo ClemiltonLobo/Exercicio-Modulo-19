@@ -19,6 +19,7 @@ public class HealthBase : MonoBehaviour
 
     private void Awake()
     {
+        uiHealthBarImage.gameObject.SetActive(true);
         Init();
         if (_flashColor == null)
         {
