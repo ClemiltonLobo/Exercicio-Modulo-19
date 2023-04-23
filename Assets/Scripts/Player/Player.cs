@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -21,12 +22,14 @@ public class Player : MonoBehaviour
     public new Collider2D collider2D;
     public float distToGround;
     public float spaceToGround = .1f;
-    public ParticleSystem jumpVFX;
+    public ParticleSystem jumpVFX;    
+    public TextMeshProUGUI gameOverText;
 
     private int _jumpCount = 0;
 
     private void Awake()
-    {        
+    {
+        gameOverText.gameObject.SetActive(false);
         if (healthBase != null)
         {
             healthBase.onKill += OnPlayerKill;
@@ -40,9 +43,9 @@ public class Player : MonoBehaviour
 
     private bool isGrounded()
     {
-        Debug.DrawRay(transform.position, -Vector2.up,Color.magenta, distToGround + spaceToGround);
+        Debug.DrawRay(transform.position, -Vector2.up, Color.magenta, distToGround + spaceToGround);
         return Physics2D.Raycast(transform.position, -Vector2.up, distToGround + spaceToGround);
-       
+
     }
 
     private void OnPlayerKill()
@@ -153,6 +156,7 @@ public class Player : MonoBehaviour
 
     public void DestroyMe()
     {
+        gameOverText.gameObject.SetActive(true);
         Destroy(gameObject);
     }
 }

@@ -28,7 +28,7 @@ public class RocketController : MonoBehaviour
     public Transform soundObject;
 
     void Awake()
-    {
+    {        
         messageText.SetActive(false);
         messageRocketOn.SetActive(false);
         messageVestKey.SetActive(false);
@@ -100,5 +100,5 @@ public class RocketController : MonoBehaviour
         hasKey = true;
         Destroy(keyPrefab);
         keyImage.gameObject.SetActive(true);
-    }
+    } 
 }

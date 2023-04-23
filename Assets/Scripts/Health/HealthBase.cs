@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HealthBase : MonoBehaviour
 {
@@ -12,19 +13,19 @@ public class HealthBase : MonoBehaviour
     public bool destroyOnKill = false;
     public float delayToKill = 0f;
     public Image uiHealthBarImage;
-
+    public TextMeshProUGUI gameOverText;
     public float _currentLife;
     private bool _isDead = false;
-    [SerializeField] FlashColor _flashColor;
+    //[SerializeField] FlashColor _flashColor;
 
     private void Awake()
     {
         uiHealthBarImage.gameObject.SetActive(true);
         Init();
-        if (_flashColor == null)
+        /*if (_flashColor == null)
         {
             _flashColor = GetComponent<FlashColor>();
-        }
+        }*/
         UpdateHealthBar();
     }
 
@@ -68,10 +69,10 @@ public class HealthBase : MonoBehaviour
             Kill();
         }
 
-        if (_flashColor != null)
+        /*if (_flashColor != null)
         {
             _flashColor.Flash();
-        }
+        }*/
         UpdateHealthBar();
     }
 
@@ -81,6 +82,7 @@ public class HealthBase : MonoBehaviour
 
         if (destroyOnKill)
         {
+            gameOverText.gameObject.SetActive(true);
             Destroy(gameObject, delayToKill);
         }
         //if(onKill != null) onKill.Invoke();

@@ -1,16 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class SpikesCollider : MonoBehaviour
+public class ThornsCollider : MonoBehaviour
 {
+    public TextMeshProUGUI gameOverText;    
+
+    private void Start()
+    {        
+        gameOverText.gameObject.SetActive(false);
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
-    {
-        // Verifica se o objeto que colidiu é o jogador
+    {        
         if (other.CompareTag("Player"))
         {
-            // Desativa o objeto do jogador
-            other.gameObject.SetActive(false);
+            {
+                gameOverText.gameObject.SetActive(true);
+                other.gameObject.SetActive(false);
+            }
         }
-    }    
+    }
 }
