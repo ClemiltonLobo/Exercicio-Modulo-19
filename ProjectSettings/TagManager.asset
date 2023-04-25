@@ -8,6 +8,11 @@ TagManager:
   - Enemy
   - Ground
   - CheckPoint
+  - Images
+  - Text
+  - img
+  - texto
+  - img3
   layers:
   - Default
   - TransparentFX
