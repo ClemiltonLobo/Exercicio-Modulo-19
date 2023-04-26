@@ -587,6 +587,10 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1017069733462838411, guid: 7d49e6ec7c3baaf4293e16cdb4542fa5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3121400353370516270, guid: 7d49e6ec7c3baaf4293e16cdb4542fa5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4414,6 +4418,10 @@ PrefabInstance:
     - target: {fileID: 536012197739139863, guid: 7d49e6ec7c3baaf4293e16cdb4542fa5, type: 3}
       propertyPath: m_margin.x
       value: 135.42317
+      objectReference: {fileID: 0}
+    - target: {fileID: 1017069733462838411, guid: 7d49e6ec7c3baaf4293e16cdb4542fa5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3121400353370516270, guid: 7d49e6ec7c3baaf4293e16cdb4542fa5, type: 3}
       propertyPath: m_Pivot.x
