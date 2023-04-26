@@ -73,7 +73,7 @@ public class Introduction : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("SCN_Level01");
+            SceneManager.LoadScene("SCN_Menu");
         }
     }
 }

@@ -28,7 +28,9 @@ AudioMixerSnapshotController:
   m_Name: Menu
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 4c1086271597c4f4db7a4b71545daa44
-  m_FloatValues: {}
+  m_FloatValues:
+    9bbf46aa841ebeb48ab2f274558a8522: -24.1
+    fd98c87b9dd817e439336a5396db319c: 0.5
   m_TransitionOverrides: {}
 --- !u!241 &24100000
 AudioMixerController:
@@ -46,7 +48,17 @@ AudioMixerController:
   m_SuspendThreshold: -42.1
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 9bbf46aa841ebeb48ab2f274558a8522
+    name: VolumeAmbience
+  - guid: fd98c87b9dd817e439336a5396db319c
+    name: PitchAmbience
+  - guid: 1978bd092963d3741bba9b267ccd5e58
+    name: VolumeMaster
+  - guid: 70ff7699b28a20342b459238f3f51a04
+    name: VolumeSFX
+  - guid: 809c3019e4243a6428efef7d0d62ba51
+    name: PitchSFX
   m_AudioMixerGroupViews:
   - guids:
     - acbe36841fa29bc4fafe903cb91e9575
@@ -54,7 +66,7 @@ AudioMixerController:
     - a9c9284ab7d8f314eafb7dee56db092e
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 24500006}
+  m_TargetSnapshot: {fileID: -293556718154590412}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
