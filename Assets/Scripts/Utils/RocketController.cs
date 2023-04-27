@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class RocketController : MonoBehaviour
 {
@@ -75,7 +76,8 @@ public class RocketController : MonoBehaviour
                 
                 PlayRocketSmokeVFX();
                 if (audioSource != null) audioSource.Play();
-                animator.SetTrigger("Launch");                
+                animator.SetTrigger("Launch");
+                //SceneManager.LoadScene("SCN_EndGame");
             }
             else
             {
