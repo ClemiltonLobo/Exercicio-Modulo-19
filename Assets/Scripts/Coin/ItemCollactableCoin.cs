@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemCollactableCoin : ItemCollactableBase
-{   
+{  
     protected override void OnCollect()
     {
         base.OnCollect();

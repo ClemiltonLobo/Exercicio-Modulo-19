@@ -22,46 +22,34 @@ public class EndGameController : MonoBehaviour
     public GameObject voltarMenuPrincipal;
 
     private void Start()
-    {
-        // Desativa o componente Animator da câmera
+    {        
         Camera.main.GetComponent<Animator>().enabled = false;
-
-        // Desativa o objeto que contém a animação do player
+        
         player.GetComponent<Animator>().enabled = false;
-
-        // Desativa a partícula
+        
         var emission = enemyExplosion.emission;
         emission.enabled = true;
-
-
-        // Inicia a corrotina para ativar o jogador depois de um tempo
+        
         StartCoroutine(ActivatePlayer());
     }
 
     IEnumerator ActivatePlayer()
-    {
-        // Espera o tempo definido para ativar o jogador
+    {        
         yield return new WaitForSeconds(playerActivationTime);
-
-        // Ativa o jogador
+        
         player.SetActive(true);
-
-        // Aguarda a animação do jogador terminar, desativa player
+        
         player.gameObject.SetActive(false);
         yield return new WaitForSeconds(playerActivationTime);
-
-        // Ativa o componente Animator da câmera
+        
         Camera.main.GetComponent<Animator>().enabled = true;
-
-        // Desativa o componente Animator da câmera
+        
         yield return new WaitForSeconds(cameraAnimationTime);
         Camera.main.GetComponent<Animator>().enabled = false;
-
-        // Ativa o enemy e desativa o prefabToDisable
+        
         enemy.SetActive(true);
         prefabToDisable.SetActive(false);
-
-        // Ativa a partícula
+        
         enemyExplosion.Play();
         yield return new WaitForSeconds(2f);
         setOfUncles.SetActive(false);

@@ -27,13 +27,12 @@ public class Introduction : MonoBehaviour
 
     public IEnumerator routine()
     {
-        if (cont < textos.Length) // Verifica se o índice é válido
+        if (cont < textos.Length)
         {
             GameObject img = GameObject.Find("img" + cont);
             img.GetComponent<Image>().enabled = true;
             texto.GetComponent<TextMeshProUGUI>().text = textos[cont];
-
-            // Desativa a imagem anterior
+            
             if (cont > 0)
             {
                 GameObject lastImg = GameObject.Find("img" + (cont - 1));

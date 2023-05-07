@@ -4781,7 +4781,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 23
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -4823,6 +4823,7 @@ GameObject:
   - component: {fileID: 7006590758857921721}
   - component: {fileID: 5312494736330829806}
   - component: {fileID: 3392617411638072123}
+  - component: {fileID: 980896268233437200}
   m_Layer: 0
   m_Name: spark-preview1
   m_TagString: Untagged
@@ -4913,6 +4914,26 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0279699, y: -0.0049393745}
   m_Size: {x: 0.6234651, y: 0.16897552}
   m_Direction: 1
+--- !u!95 &980896268233437200
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3569544641074713845}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a767d342f70a54806ade1a7245b9aa18, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &8103501336208951472
 GameObject:
   m_ObjectHideFlags: 0

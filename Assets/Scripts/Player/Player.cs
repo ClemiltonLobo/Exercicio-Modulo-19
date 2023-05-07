@@ -127,7 +127,7 @@ public class Player : MonoBehaviour
                 PlayJumpVFX();
                 _jumpCount--;
             }
-        }
+        }        
     }
     private void OnCollisionEnter2D(Collision2D other)
     {

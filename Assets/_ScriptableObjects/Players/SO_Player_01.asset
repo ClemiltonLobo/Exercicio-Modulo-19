@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SO_Player_01
   m_EditorClassIdentifier: 
   player: {fileID: 8082996659672965700, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
-  friction: {x: -1, y: 0}
+  friction: {x: -2, y: 0}
   speedRun: 21
   speed: 21
   forceJump: 35
